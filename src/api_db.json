@@ -1,0 +1,3032 @@
+{
+  "620": {
+    "id": "620",
+    "name": "Product Catalog",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF620 - Product Catalog Management\n\n### Release : 20.0 - March 2020\n\nProduct Catalog API is one of Catalog Management API Family. Product Catalog API goal is to provide a catalog of products. \n\n### Operations\nProduct Catalog API performs the following operations on the resources :\n- Retrieve an entity or a collection of entities depending on filter criteria\n- Partial update of an entity (including updating rules)\n- Create an entity (including default values and creation rules)\n- Delete an entity\n- Manage notification of events",
+    "basePath": "/tmf-api/productCatalogManagement/v4/",
+    "resources": {
+      "Catalog": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "batch"
+        ]
+      },
+      "Category": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "delete"
+        ]
+      },
+      "ProductOffering": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "ProductOfferingPrice": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "ProductSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "delete"
+        ]
+      },
+      "ImportJob": {
+        "operations": "GET,POST,DELETE"
+      },
+      "ExportJob": {
+        "operations": "GET,POST,DELETE"
+      }
+    }
+  },
+  "621": {
+    "id": "621",
+    "name": "Trouble Ticket",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF - 621 Trouble Ticket**\n\n**Release : 19.0 - June 2019**\n\nThe Trouble Ticket API provides a standardized client interface to Trouble Ticket Management Systems for creating, tracking and managing trouble tickets as a result of an issue or problem identified by a customer or another system. \nExamples of Trouble Ticket API originators (clients) include CRM applications, network management or fault management systems, or other Trouble Ticket management systems (e.g. B2B).\n\nThe API supports the ability to send requests to create a new trouble ticket specifying the nature and severity of the trouble or issue as well as all necessary related information. The API also includes mechanisms to search for and update existing trouble tickets. Notifications are defined to provide information when a trouble ticket has been updated, including status changes. A basic set of states of a trouble ticket has been specified (as an example) to handle trouble ticket lifecycle management.\nTrouble Ticketing API manages trouble ticket resource:\n\n  -\tA trouble ticket represents a record, or an issue raised by requestor that need to be solved, used for reporting and managing the resolution of problems, incidents or request -\tMain trouble ticket attributes are its description, severity, type, related dates (creation, expected resolution, resolution), state and related information (change reason and change date), related parties (originator, owner, reviser, etc.), related entities (product, product order, customer bill) and notes Trouble Ticket API performs the following operations on trouble ticket -\tRetrieval of a trouble ticket or a collection of trouble ticket depending on filter criteria -\tPartial update of a trouble ticket -\tCreation of a trouble ticket -\tNotification of events on trouble ticket: o\tTrouble ticket state change o\tTrouble ticket change o\tTrouble ticket resoled o\tTrouble ticket created o\tTrouble ticket Information required\n\n\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/troubleTicket/v4/",
+    "resources": {
+      "TroubleTicket": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "statusChange",
+          "delete",
+          "resolved",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "622": {
+    "id": "622",
+    "name": "Product Ordering",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 622 - Product Ordering Management**\n\n**Release : 19.0 - June 2019**\n\nThe Product Ordering API provides a standardized mechanism for placing a product order with all of the necessary order parameters. The API consists of a simple set of operations that interact with CRM/Order Negotiation systems in a consistent manner. A product order is created based on a product offer that is defined in a catalog. The product offer identifies the product or set of products that are available to a customer, and includes characteristics such as pricing, product options and market. This API provide a task based resource to request order cancellation.\n\nThe product order references the product offer and identifies any specific requests made by the customer.\n\n**Product Order resource**\nA Product Order is a type of order which can be used to place an order between a customer and a service provider or between a service provider and a partner and vice versa. Main Product Order attributes are its identifier, state, priority category (mass market, Enterprise, etc.) related dates (start, completion, etc.), related billing account, related parties and order items. Main Order Items (aka order lines) attributes are the ordered offering and product characteristics with the related action to be performed (e.g. add or delete the products), state, location information for delivery, order item price and price alteration.\n\nProduct Order API performs the following operations on product order :\n\n   -Retrieval of a product order or a collection of product orders depending on filter criteria\n    -Partial update of a product order (including updating rules)\n   -Creation of a product order (including default values and creation rules)\n   -Deletion of product order (for administration purposes)\n    -Notification of events on product order.\n\n**cancelProductOrder resource**\nThis resource is used to request a product order cancellation.\nProduct Order API performs the following operations on product order :\n\n   -Retrieval of a cancel product order or a collection of cancel product orders \n   -Creation of a cancel product order \n   -Notification of events on cancel product order.\n\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/productOrderingManagement/v4/",
+    "resources": {
+      "ProductOrder": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange",
+          "informationRequired"
+        ]
+      },
+      "CancelProductOrder": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "623": {
+    "id": "623",
+    "name": "SLA",
+    "version": "4.0.0",
+    "description": "",
+    "basePath": "/tmf-api/slaManagement/v4",
+    "resources": {
+      "ServiceLevelAgreement": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create, attributeValueChange, stateChange, delete"
+        ]
+      },
+      "ServiceLevelAgreementSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create, attributeValueChange, stateChange, delete"
+        ]
+      }
+    }
+  },
+  "628": {
+    "id": "628",
+    "name": "Performance",
+    "version": "4.0.0",
+    "description": "TMF628 Performance Management API",
+    "basePath": "/tmf-api/performance/v4/",
+    "resources": {
+      "MeasurementCollectionJob": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create,executionStateChange,delete,attributeValueChange,filesReady,filesPreparationError"
+        ]
+      },
+      "PerformanceMeasurement": {
+        "operations": "GET",
+        "notifications": [
+          "create,collectionReady"
+        ]
+      },
+      "PerformanceIndicatorSpecification": {
+        "operations": "GET, PATCH, POST, DELETE"
+      },
+      "PerformanceIndicatorGroupSpecification": {
+        "operations": "GET, PATCH, POST, DELETE"
+      },
+      "DataAccessEndpoint": {
+        "operations": "GET"
+      },
+      "QueryTask": {
+        "operations": "GET",
+        "notifications": [
+          "create,executionStateChange"
+        ]
+      },
+      "TrackingRecord": {
+        "operations": "GET"
+      }
+    }
+  },
+  "629": {
+    "id": "629",
+    "name": "Customer",
+    "version": "4.0.0",
+    "description": "This is Swagger UI environment generated for the TMF Customer Management specification",
+    "basePath": "/tmf-api/customerManagement/v4/",
+    "resources": {
+      "Customer": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      }
+    }
+  },
+  "632": {
+    "id": "632",
+    "name": "Party",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 632 - Party \n\n### Release : 19.0 \n\nThe party API provides standardized mechanism for party management such as creation, update, retrieval, deletion and notification of events. Party can be an individual or an organization that has any kind of relation with the enterprise. Party is created to record individual or organization information before the assignment of any role. For example, within the context of a split billing mechanism, Party API allows creation of the individual or organization that will play the role of 3 rd payer for a given offer and, then, allows consultation or update of his information.\n\n### Resources\n- Organization\n- Individual\n- Hub\n\nParty API performs the following operations :\n- Retrieve an organization or an individual\n- Retrieve a collection of organizations or individuals according to given criteria\n- Create a new organization or a new individual\n- Update an existing organization or an existing individual\n- Delete an existing organization or an existing individual\n- Notify events on organizatin or individual",
+    "basePath": "/tmf-api/party/v4/",
+    "resources": {
+      "Individual": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "Organization": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      }
+    }
+  },
+  "633": {
+    "id": "633",
+    "name": "Service Catalog",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF633 - Service Catalog Management\n\n Version 4.0 \n\nThe Service Catalog API is one of Catalog Management API Family. Service Catalog API goal is to provide a catalog of services. \nService Catalog API performs the following operations on the resource :\n- Retrieve an entity or a collection of entities depending on filter criteria\n- Partial update of an entity (including updating rules)\n- Create an entity (including default values and creation rules)\n- Delete an entity (for administration purposes)\n- Manage notification of events. .\n\nCopyright \u00c2\u00a9 TM Forum 2020. All Rights Reserved. ",
+    "basePath": "/tmf-api/serviceCatalogManagement/v4/",
+    "resources": {
+      "ServiceCatalog": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "batch",
+          "delete"
+        ]
+      },
+      "ServiceCategory": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ServiceCandidate": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ServiceSpecification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ImportJob": {
+        "operations": "GET, POST, DELETE"
+      },
+      "ExportJob": {
+        "operations": "GET, POST, DELETE"
+      }
+    }
+  },
+  "634": {
+    "id": "634",
+    "name": "Resource Catalog",
+    "version": "4.1.0",
+    "description": "## TMF API Reference: TMF634 - Resource Catalog Management\n\n### December 2019\n\nResource Catalog API is one of Catalog Management API Family. Resource Catalog API goal is to provide a catalog of resources. \n\n### Operations\nResource Catalog API performs the following operations on the resources :\n- Retrieve an entity or a collection of entities depending on filter criteria\n- Partial update of an entity (including updating rules)\n- Create an entity (including default values and creation rules)\n- Delete an entity\n- Manage notification of events",
+    "basePath": "/tmf-api/resourceCatalog/v4/",
+    "resources": {
+      "ResourceCatalog": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ResourceCategory": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ResourceCandidate": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ResourceSpecification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ImportJob": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "ExportJob": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "635": {
+    "id": "635",
+    "name": "Usage",
+    "version": "4.0.0",
+    "description": "TMF635 Usage Management provides a standaised mechanism for usage management such as creation, update, retrieval, import and export of a collection of rated and non-rated usage. A usage represents an event that is of interest to a billing system, and can have charges applied to it. It is comprised of characteristics which define all attributes known for a particular type of usage.",
+    "basePath": "/tmf-api/usageManagement/v4/",
+    "resources": {
+      "Usage": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "UsageSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "637": {
+    "id": "637",
+    "name": "Product Inventory",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 637 - Product Inventory Management**\n\nRelease : 19.0 - June 2019\n\nThe Product Inventory Management API provides standardized mechanism for product inventory management such as creation, update and retrieval of the representation of a product in the inventory. It also allows the notification of events related to product lifecycle\n\n**Product resource**\nA product offering procured by a customer or other interested party playing a party role. A product is realized as one or more service(s) and / or resource(s).\n\nProduct Inventory API performs the following operations on product :\n- Retrieval of a product or a collection of products depending on filter criteria\n- Partial update of a product (including updating rules and for administration purpose)\n- Creation of a product (including default values and creation rules and for administration purpose)\n- Deletion of a product (for administration purposes)\n- Notification of events on product.\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/productInventory/v4/",
+    "resources": {
+      "Product": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "batch",
+          "delete"
+        ]
+      }
+    }
+  },
+  "638": {
+    "id": "638",
+    "name": "Service Inventory",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 638 - Service Inventory Management\n\n Version 4.0 \n\nThe intent of this API is to provide a consistent/standardized mechanism to query and manipulate the Service inventory.\n\nThe Service Inventory API can be used to query the service instances for a customer via Self Service Portal or the Call Centre operator can query the service instances on behalf of the customer while a customer may have a complaint or a query.\nNote: Only the CustomerFacingServices instances will be presented to the customer.\n\nThe Service Inventory API can be called by the Service Order Management to create a new service instance/ update an existing service instance in the Service Inventory.\n\n### Service resource\nService is an abstract base class for defining the Service hierarchy. All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of  Service: CustomerFacingService and ResourceFacingService.\n\n### Service Inventory API performs the following operations on service  :\n- Retrieve  a service or a collection of services depending on filter criteria\n- Partial update of a service (including updating rules)\n- Create a service (including default values and creation rules and for administration users only)\n- Delete a service (for administration users only)\n- Notification of events on service\n\nCopyright (c)TM Forum 2019. All Rights Reserved.",
+    "basePath": "/tmf-api/serviceInventory/v4",
+    "resources": {
+      "Service": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "639": {
+    "id": "639",
+    "name": "Resource Inventory",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF639 - Resource Inventory \n\n### Release : 19.5 - December 2019\n\nResource Inventory  API goal is to provide the ability to manage Resources.\n\n### Operations\nResource Inventory API performs the following operations on the resources :\n- Retrieve an entity or a collection of entities depending on filter criteria\n- Partial update of an entity (including updating rules)\n- Create an entity (including default values and creation rules)\n- Delete an entity (for administration purposes)\n- Manage notification of events",
+    "basePath": "/tmf-api/resourceInventoryManagement/v4/",
+    "resources": {
+      "Resource": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "LogicalResource": {
+        "operations": "NOOPRERATION"
+      }
+    }
+  },
+  "640": {
+    "id": "640",
+    "name": "Service Activation",
+    "version": "1.0",
+    "description": "",
+    "basePath": "/DSEntityProvisioning/api/ActivationAndConfiguration/v2",
+    "resources": {
+      "Service": {
+        "operations": "GET,POST,PATCH,DELETE"
+      },
+      "Monitor": {
+        "operations": "GET,HEAD"
+      },
+      "Resource": {
+        "operations": "GET,POST,PATCH,DELETE"
+      }
+    }
+  },
+  "641": {
+    "id": "641",
+    "name": "Service Ordering",
+    "version": "4.1.0",
+    "description": "## TMF API Reference : TMF 641 - Service Ordering Management\n\n Version 4.0 \n\nThe Service Order API provides a standardized mechanism for managing Service Order, a type of order which can be used to place an order between internal Customer Order management system to service order management system or between a service provider and a partner and vice versa.\n\n### Service Order resource\nA service order will describe a list of service order items.  A service order item references an action on an existing  or  future  service.  By  service  we  designed  Customer Facing  Service  (CFS)  as  well  as  Resource Facing Service (RFS).\nFrom a component perspective, a service order should be available\n- from a Service Orchestration Component (and it could mix CFS and RFS)\n- from an Infrastructure Control & Management component (and it would have only RFS)\n\n### TMF641 performs the following operations on service order resource :\n- Retrieval of a service order or a collection of service orders depending on filter criteria\n- Partial update of a service order (including updating rules)\n- Creation of a service order (including default values and creation rules)\n- Deletion of service order (for administration purposes)\n- Notification of events on Service order\n\n**Cancel Service Order resource**\n\nThis resource is used to request a service order cancellation.\n\n**TMF641 provides following operations on Cancel Service Order resource :**\n\n- Retrieval of a cancel service order or a collection of cancel service orders \n- Creation of a cancel service order \n- Notification of events on cancel service order.\n\nCopyright \u00c2\u00a9 TM Forum 2020. All Rights Reserved",
+    "basePath": "/tmf-api/serviceOrdering/v4",
+    "resources": {
+      "ServiceOrder": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "informationRequired",
+          "milestoneStateChange",
+          "jeopardyAlert"
+        ]
+      },
+      "CancelServiceOrder": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "642": {
+    "id": "642",
+    "name": "Alarm",
+    "version": "4.0.0",
+    "description": "Alarm Management API",
+    "basePath": "/tmf-api/alarmManagement/v4/",
+    "resources": {
+      "Alarm": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "AckAlarms": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "UnAckAlarms": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "ClearAlarms": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "CommentAlarms": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "GroupAlarms": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "UnGroupAlarms": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "644": {
+    "id": "644",
+    "name": "Privacy",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF - 644 Privacy**\n\n**Release : 19.0 - June 2019**\n\nThe Privacy Management API provides standardized mechanism for privacy profile specification, privacy profiles and privacy agreements such as creation, update, retrieval, deletion and notification of events.Privacy management API manages the following data resources:\n\n**Privacy Profile specification**\nPrivacy profile specification represents a description for privacy profiles.Main privacy profile specification attributes are its identifier, name, description, version, last update, lifecycle status, validity period, characteristics and their values, related parties, applicable roles.\n\n**Privacy Profile**\nPrivacy profile represents the set of Privacy settings defined for a Party.Main privacy profile attributes are its identifier, name, description, date of creation, status, validity period, privacy profile specification, characteristics values, agreement, the party who has agreed and the party which the privacy is applicable for, typically the same party represents both the aggreged by and applicable for. In case of minor privacy the applicable for party is the minor and the agreed party is the parent.\n\n**Privacy Agreement**\nPrivacy agreement represents the approval made by the Party about a Party Privacy Profile.Main privacy agreement attributes are its identifier, name, description, agreement period, initial date, completion date, document number, statement of intent, status, type, version, agreement specification, agreement items, engaged party, agreement authorization, characteristics, associated agreements, privacy profile and privacy profile characteristic values.\nPrivacy management API performs the following operations on privacy profile specification, privacy profiles and privacy agreements:\n-Retrieval of a privacy profile specification, a privacy profile or a privacy agreement, or of a collection of them depending on filter criteria\n-Partial update of a privacy profile specification, a privacy profile or a privacy agreement\n-Creation of a privacy profile specification, a privacy profile or a privacy agreement\n-Deletion of a privacy profile specification, a privacy profile or a privacy agreement (for administration purposes)\n\n**Notification of events:**\n-privacy profile specification create\n-privacy profile specification update\n-privacy profile specification delete\n-privacy profile create\n-privacy profile update\n-privacy profile delete\n-privacy agreement create\n-privacy agreement update\n\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/privacyManagement/v4/",
+    "resources": {
+      "PartyPrivacyProfile": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "statusChange"
+        ]
+      },
+      "PartyPrivacyProfileSpecification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "statusChange"
+        ]
+      },
+      "PartyPrivacyAgreement": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "statusChange"
+        ]
+      }
+    }
+  },
+  "645": {
+    "id": "645",
+    "name": "Service Qualification",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF645 - Service Qualification\n\n Version 4.0 \n\n Service Qualification API is one of Pre-Ordering Management API Family. Service Qualification API goal is to provide service technical eligibility. Since v4 the API is split in 2 resources to distinguish specific service qualification request to be performed on a described configurated service (or a list of configured services) from a retrieval of services eligible for a given context. The API allows to manage synchronous as asynchronous eligibility response (eligibility provided in POST response or later with an id and state provided ).  \n\n### CheckServiceQualification Resource \n\n This resource is use to check a configured service eligibility (or a list of service). A qualification result is provided in response. Requested could ask for unavailability reason and/or for alternate proposal \n\n### TMF645 performs the following operations on the check service qualification resource :\n- Retrieve a checkServiceQualification or a collection of checkServiceQualification depending on filter criteria\n- Partial update of a checkServiceQualification \n- Create a checkServiceQualification (including default values and creation rules)\n- Delete a checkServiceQualification (for administration purposes)\n- Manage notification on checkServiceQualification\n\n### Query Service Qualification resource\n\n Query Service Qualification is used to retrieve a list of service eligible in a given request provided by requester (via searchCriteria).\n\n### TMF645 performs the following operations on a query service qualification resource:\n\n- Retrieval a queryServiceQualification or a list of queryServiceQualification\n- Partial update of a queryServiceQualification\n- Creation of a queryServiceQualification\n- Deletion of a queryServiceQualification\n- Notification on queryServiceQualification\n\n Copyright (c) TM Forum 2019. All Rights Reserved",
+    "basePath": "/tmf-api/serviceQualificationManagement/v4",
+    "resources": {
+      "CheckServiceQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "informationRequired"
+        ]
+      },
+      "QueryServiceQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "646": {
+    "id": "646",
+    "name": "Appointment",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 646 - Appointment\n\nAn Appointment is an arrangement to do something or meet someone at a particular time and place. It is previously made during an interaction or may be necessary to solve a customer problem or to deliver a product order item. The appointment API goal is to manage an appointment with all the necessary characteristics. First, the API consists in searching free time slots based on given parameters.",
+    "basePath": "/tmf-api/appointment/v4/",
+    "resources": {
+      "Appointment": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "SearchTimeSlot": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      }
+    }
+  },
+  "648": {
+    "id": "648",
+    "name": "Quote",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 648 - Quote Management**\n\n**Release : 19.0 - June 2019**\n\nThe Quote API provides a standardized mechanism for placing a quote with all of the necessary parameters. The API consists of a simple set of operations that interact with CRM/Quote/Pricing Negotiation systems in a consistent manner. A Quote is created based on product offering(s) that is(are) defined in a catalog. The quote identifies the product or set of products that are available to a customer for pricing request, and includes product characteristics.\n\nThe Quote references the product offer(s) which (future) customer request pricing.\nQuote resource features authorization subclass to manage special pricing UC requiring authorization tracking management\n\n**Quote resource**\nA Quote can be used to request pricing between a customer and a service provider or between a service provider and a partner and vice versa. Main quote attributes are its identifier, state, priority, related dates (requested, expected, valid, completion, etc.), related parties and quote items. Main Quote Items attributes are the discribed offering and product characteristics with the related action to be performed (e.g. add, change or delete the products), location information, and product characteristics.\n\nQuote API performs the following operations on Quote :\n\n- Retrieval of a quote or a collection of quotes depending on filter criteria\n- Partial update of a quote (including updating rules)\n- Creation of a quote (including default values and creation rules)\n- Deletion of quote (for administration purposes)\n- Notification of events on quote.\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n",
+    "basePath": "/tmf-api/quoteManagement/v4/",
+    "resources": {
+      "Quote": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete",
+          "informationRequired",
+          "attributeValueChange"
+        ]
+      }
+    }
+  },
+  "649": {
+    "id": "649",
+    "name": "Performance Thresholding",
+    "version": "3.0",
+    "description": "This is Swagger UI environment generated for the TMF Performance Management Threshold specification",
+    "basePath": "/DSPerformanceThreshold/api/performanceThreshold/v1",
+    "resources": {
+      "Threshold": {
+        "operations": "GET,POST,PATCH,DELETE"
+      },
+      "ThresholdJobChangedNotification": {
+        "operations": "POST"
+      },
+      "ThresholdJobSuspendNotification": {
+        "operations": "POST"
+      },
+      "ThresholdJobResumeNotification": {
+        "operations": "POST"
+      },
+      "ThresholdJob": {
+        "operations": "GET,POST,PATCH,DELETE"
+      },
+      "ThresholdRule": {
+        "operations": "GET,POST,PATCH,DELETE"
+      }
+    }
+  },
+  "651": {
+    "id": "651",
+    "name": "Agreement",
+    "version": "4.0.0",
+    "description": "This is Swagger UI environment generated for the TMF Agreement Management specification",
+    "basePath": "/tmf-api/agreementManagement/v4/",
+    "resources": {
+      "Agreement": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "AgreementSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      }
+    }
+  },
+  "652": {
+    "id": "652",
+    "name": "Resource Order",
+    "version": "4.0.0",
+    "description": "TMF652: The Resource Order API provides a standard mechanism for creating/placing, updating, canceling and deleting a Resource Order with all necessary order parameters. A Resource Order is based on a resource candidate that is defined in the resource catalog. A Resource candidate makes a Resource Specification available to a resource catalog. Resources can be logical (eg: MSISDN, IP-addresses) or physical (eg: cables, routers, firewalls).",
+    "basePath": "/tmf-api/resourceOrdering/v4/",
+    "resources": {
+      "ResourceOrder": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "informationRequired"
+        ]
+      },
+      "CancelResourceOrder": {
+        "operations": "GET,POST",
+        "notifications": [
+          "create",
+          "stateChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "653": {
+    "id": "653",
+    "name": "Service Test",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF653 - Service Test Management\n\n### Release : 20.0 - April 2020\n\nService Test Management API goal is to provide the ability to manage tests of provisioned Services. \n\n### Resource \n- ServiceTest \n- ServiceTestSpecification\n\n### Operations\nService Test Management API performs the following operations on the resources :\n- Retrieve an entity or a collection of entities depending on filter criteria\n- Partial update of an entity (including updating rules)\n- Create an entity (including default values and creation rules)\n- Delete an entity (for administration purposes)\n- Manage notification of events",
+    "basePath": "/tmf-api/serviceTestManagement/v4/",
+    "resources": {
+      "ServiceTest": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      },
+      "ServiceTestSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "654": {
+    "id": "654",
+    "name": "PrepayBalance",
+    "version": "4.1.0",
+    "description": "## TMF API Reference: TMF654 - Prepay Balance Management\n\n### Final : 19.5 - June 2020\n\nThe Prepay Balance Management API enables consumers to manage the balance, recharge (top-up), transfer, reserve, unreserve, deduct and balance adjustments of a  bucket. A bucket is understood in the context of this API to be an entity that keeps track of the balance available to use services. Every bucket will measure balance in different units, it can be monetary or non-monetary (e.g.: number of sms that are available, number of GB of data available, \u00e2\u20ac\u00a6)\n\n### Resources\n- Bucket\n- TopupBalance\n- AdjustBalance\n- TransferBalance\n- ReserveBalance\n- AccumulatedBalance\n- BalanceAction\n\n### Operations\n- Retrieve the balance information on a bucket for a given product (individual or aggregated).\n- Retrieve the list of balance-related operations performed over a given product\n- Retrieve information about all the top-up operations stored in the server filtered by some criteria.\n- Perform a new top up operation (recharge)\n- Retrieve detailed information about a top-up operation previously processed by the server.\n- Retrieve the current and historic status information about a top-up operation previously processed by the server.\n- Perform a new transfer operation\n- Retrieve information about all the transfer operations stored in the server filtered by some criteria\n- Retrieve detailed information about a transfer operation previously processed by the server\n- Retrieve the current and historic status information about a transfer operation previously processed by the server.\n- Retrieve information about all the adjustments stored in the server filtered by some criteria.\n- Perform a new adjustment operation\n- Retrieve detailed information about a balance adjustment operation previously processed by the server\n- Reserve a balance on a bucket.\n- Unreserve a balance on a bucket.\n- Retrieve aggregated (accumulative) balances for a bucket.",
+    "basePath": "/tmf-api/prepayBalanceManagement/v4",
+    "resources": {
+      "Bucket": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "attributeValueChange"
+        ]
+      },
+      "TopupBalance": {
+        "operations": "POST,PATCH,GET,DELETE",
+        "notifications": [
+          "create",
+          "cancel",
+          "failure",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "AdjustBalance": {
+        "operations": "POST,PATCH,GET,DELETE",
+        "notifications": [
+          "create",
+          "cancel",
+          "failure",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "TransferBalance": {
+        "operations": "POST,PATCH,GET,DELETE",
+        "notifications": [
+          "create",
+          "cancel",
+          "failure",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "ReserveBalance": {
+        "operations": "POST,PATCH,GET,DELETE",
+        "notifications": [
+          "create",
+          "cancel",
+          "failure",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "AccumulatedBalance": {
+        "operations": "GET"
+      },
+      "BalanceAction": {
+        "operations": "GET"
+      }
+    }
+  },
+  "655": {
+    "id": "655",
+    "name": "Change",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 655 The Change Management API provides the standard integration capabilities between external applications and Change Management Application",
+    "basePath": "/tmf-api/ChangeManagement/v4/",
+    "resources": {
+      "ChangeRequest": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "statusChange",
+          "delete",
+          "attributeValueChange",
+          "approvalRequired"
+        ]
+      }
+    }
+  },
+  "656": {
+    "id": "656",
+    "name": "Service Problem",
+    "version": "4.0.0",
+    "description": "TMF656 - Service Problem Management, August 2020. Service Problem Management API is used to manage problems in the Service domain. It can retrieve a Problem or a collection of Problems based on filter criteria; Partial update of Problems (including updating rules); Create a Problem (including default values and creation rules); Delete a Problem (for administration purposes) and Manage the notification of events",
+    "basePath": "/tmf-api/serviceProblemManagement/v4/",
+    "resources": {
+      "ServiceProblem": {
+        "operations": "GET,POST,PATCH, DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "attributeValueChange",
+          "informationRequired"
+        ]
+      },
+      "ServiceProblemEventRecord": {
+        "operations": "GET"
+      },
+      "ProblemGroup": {
+        "operations": "POST"
+      },
+      "ProblemUngroup": {
+        "operations": "POST"
+      }
+    }
+  },
+  "657": {
+    "id": "657",
+    "name": "Service Quality Management",
+    "version": "4.0.0",
+    "description": "This is Swagger UI environment generated for the TMF Service Quality Management specification",
+    "basePath": "/tmf-api/serviceQualityManagement/v4/",
+    "resources": {
+      "ServiceLevelObjective": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      },
+      "ServiceLevelSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "658": {
+    "id": "658",
+    "name": "Loyalty",
+    "version": "4.0.0",
+    "description": "The TMForum Loyalty Management API Specification",
+    "basePath": "/tmf-api/loyalty/v4/",
+    "resources": {
+      "LoyaltyProgramProductSpec": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyProgramMember": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyProgramProduct": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyAccount": {
+        "operations": "GET,POST,PATCH,DELETE"
+      },
+      "LoyaltyRule": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyEventType": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyCondition": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyAction": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyProgramPartner": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "LoyaltyEvent": {
+        "operations": "POST"
+      },
+      "LoyaltyEarn": {
+        "operations": "POST"
+      },
+      "LoyaltyBurn": {
+        "operations": "POST"
+      },
+      "LoyaltyExecutionPoint": {
+        "operations": "GET"
+      }
+    }
+  },
+  "662": {
+    "id": "662",
+    "name": "Entity Catalog",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF662 - Entity Catalog Management\n\n### Release : V4.0 - Mar 2020\n\nEntity Catalog API is one of Catalog Management API Family. Entity Catalog API goal is to provide a catalog of arbitrary entities, so that there will be no need for specific catalogs in addition to product, service, and resource. \n\n### Operations\nEntity Catalog API performs the following operations on the resources :\n- Retrieve an entity or a collection of entities depending on filter criteria\n- Partial update of an entity (including updating rules)\n- Create an entity (including default values and creation rules)\n- Delete an entity\n- Manage notification of events",
+    "basePath": "/tmf-api/entityCatalogManagement/v4/",
+    "resources": {
+      "EntityCatalog": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "batch"
+        ]
+      },
+      "EntityCategory": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "EntityCatalogItem": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "EntitySpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "AssociationSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Association": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "ImportJob": {
+        "operations": "GET, POST, DELETE"
+      },
+      "ExportJob": {
+        "operations": "GET, POST, DELETE"
+      }
+    }
+  },
+  "663": {
+    "id": "663",
+    "name": "Shopping Cart",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF - 663 Shopping Cart**\n\n**Release : 19.0 - June 2019**\n\nThe Shoppoing Cart API provides a standardized mechanism for the management of shopping carts. Including creation, update, retrieval, deletion and notification of event. \nShopping Cart entity is used for the temporarily selection and reservation of product offerings in e-commerce and retail purchase. \nShopping cart supports purchase of both tangible and intangible goods and service (e.g. handset, telecom network service). The charge includes the one-off fee such as the fee for handset and the recurring fee such as the fee of a network service. \nShopping Cart contains list of cart items, a reference to party or party role (e.g. customer) or contact medium in case of unknown customer, In addition the calculated total items price including promotions.\n\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/shoppingCart/v4/",
+    "resources": {
+      "ShoppingCart": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "664": {
+    "id": "664",
+    "name": "Resource Function Activation",
+    "version": "4.0.0",
+    "description": "Provisioning and lifecycle management of Resource Functions",
+    "basePath": "/tmf-api/resourceFunctionActivation/v4/",
+    "resources": {
+      "ResourceFunction": {
+        "operations": "GET, PATCH, DELETE, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Monitor": {
+        "operations": "GET",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Heal": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Scale": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Migrate": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "666": {
+    "id": "666",
+    "name": "Account",
+    "version": "4.1.0",
+    "description": "Swagger for TMF666 Account Management API",
+    "basePath": "/tmf-api/accountManagement/v4/",
+    "resources": {
+      "PartyAccount": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "BillingAccount": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "PartnerBillingAccount": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "SettlementAccount": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "FinancialAccount": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "BillingCycleSpecification": {
+        "operations": "GET,POST,PATCH,DELETE"
+      },
+      "BillFormat": {
+        "operations": "GET,POST,PATCH,DELETE"
+      },
+      "BillPresentationMedia": {
+        "operations": "GET,POST,PATCH,DELETE"
+      }
+    }
+  },
+  "667": {
+    "id": "667",
+    "name": "Document",
+    "version": "4.0.0",
+    "description": "TMF667 Document API describes the meta-data of a Document, such as the name, creationDate and lifecycle status. The (typically binary) body of this document (such as a Word.doc, PDF, Video clip, or Image) will be held in the associated Attachment(s) either by Ref or Value. If by value - the binary content is held in the Attachment.content. If by reference, the Attachment.url might point to a (file:) or remote (http:) pointer to the Document media.\\n\\n A Document may be associated with a DocumentSpecification, which will detail the characteristics of that type of Document (an Image may have a width, height and format; a Video may have a length and format).\\n A Document has a collection of RelatedParty's, for roles such as author, reviewer, publisher, and a lifecycle status to take the document through a simple set of production stages.",
+    "basePath": "/tmf-api/document/v4/",
+    "resources": {
+      "Document": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "batch",
+          "delete"
+        ]
+      },
+      "DocumentSpecification": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "668": {
+    "id": "668",
+    "name": "Partnership",
+    "version": "4.0.0",
+    "description": "This is Swagger UI environment generated for the TMF Partnership Management specification",
+    "basePath": "/tmf-api/partnershipManagement/v4/",
+    "resources": {
+      "PartnershipSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,change,delete"
+        ]
+      },
+      "Partnership": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,change,delete"
+        ]
+      }
+    }
+  },
+  "669": {
+    "id": "669",
+    "name": "Party Role",
+    "version": "4.0.0",
+    "description": "This is Swagger UI environment generated for the TMF Party Role Management specification",
+    "basePath": "/tmf-api/partyRoleManagement/v4/",
+    "resources": {
+      "PartyRole": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      }
+    }
+  },
+  "670": {
+    "id": "670",
+    "name": "Payment Method",
+    "version": "4.1.0",
+    "description": "TMF670 Defines a specific method of payment (e.g. direct debit with all details associated)\n-\tMain payment method attributes are its type, details, name, description, isPreffered, status, status date\nPayment Method API performs the following operations on payment method.\n-\tRetrieval of a payment method or a collection of payment method depending on filter criteria\n-\tPartial update of a payment method\n-\tCreation of a payment method \n-\tNotification of events on payment method:\no\tPayment method state change\no\tPayment method change\no\tPayment method created\no\tPayment method deleted \n\n\\n\\n\\nCopyright \u00c2\u00a9 TM Forum 2022. All Rights Reserved\\n\\n\\n\"\n",
+    "basePath": "/tmf-api/paymentMethod/v4/",
+    "resources": {
+      "PaymentMethod": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "671": {
+    "id": "671",
+    "name": "Promotion",
+    "version": "4.1.0",
+    "description": "This API is used to provide the additional discount, voucher, bonus or gift to the customer who meets the pre-defined criteria. Using promotion, the enterprise is able to attract the users and encourage more consumption, especially continuous purchases. Normally Promotion is not regarded as one type of product or product offering. It is often applied when the customer buys the product offerings with the price or amount surpassing the certain limit",
+    "basePath": "/tmf-api/promotionManagement/v4/",
+    "resources": {
+      "Promotion": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "672": {
+    "id": "672",
+    "name": "User Role Permission",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 672 - User Roles And Permissions\n\nThis API is used to manage the user account with which the customer or staff can log-in and log-off the system and the permission for the user to enter or operate the special information.",
+    "basePath": "serverRoot/rolesAndPermissions/v4/",
+    "resources": {
+      "Permission": {
+        "operations": "GET, PATCH, POST",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "UserRole": {
+        "operations": "GET, PATCH, POST",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "CheckPermission": {
+        "operations": "POST"
+      }
+    }
+  },
+  "673": {
+    "id": "673",
+    "name": "Geographic Address",
+    "version": "4.0.1",
+    "description": "## TMF API Reference : TMF 673 - Place - Geographic Address Management\n### Release : 19.5 - January 2020\n\nThe Geographic Address API provides a standardized client interface to an Address management system.\nIt allows looking for worldwide addresses.\nIt can also be used to validate geographic address data, to be sure that it corresponds to a real address.\n\n### Resources\n- GeographicAddress\n- GeographicSubAddress\n- GeographicAddressValidation\n- Hub\n\n### Operations\nGeographic Address Management API performs the following operations :\n- Retrieve a geographic address or a collection of geographic addresses\n- Retrieve a geographic sub-address\n- Create a geographic address validation\n- Retrieve, update and delete an existing  geographic address validation\n- Notify events on these resources",
+    "basePath": "/tmf-api/geographicAddressManagement/v4/",
+    "resources": {
+      "GeographicAddressValidation": {
+        "operations": "GET,POST,PATCH",
+        "notifications": [
+          "stateChange"
+        ]
+      },
+      "GeographicAddress": {
+        "operations": "GET"
+      },
+      "GeographicSubAddress": {
+        "operations": "GET"
+      }
+    }
+  },
+  "675": {
+    "id": "675",
+    "name": "Geographic Location",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF675 - Geographic Location\n### Release : 19.5\nA GeographicLocation is a pure-virtual super-class to the GeoJSON-aligned sub-types of Point (addresses and locations), MultiPoint, LineString (streets, highways and boundaries), MultiLineString and Polygon (countries, provinces, tracts of land). Use the @type attribute to specify which of these is being specified by the geometry attribute.",
+    "basePath": "/tmf-api/geographicLocation/v4/",
+    "resources": {
+      "GeographicLocation": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "676": {
+    "id": "676",
+    "name": "Payment",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 676 - Payment\n\nThis API provides the standardized client interface to Payment Systems for managing performed payments or refunds. Examples of Payment API originators (clients) include Web servers, mobile app servers, Contact center dashboards or retail store systems.",
+    "basePath": "serverRoot/paymentManagement/v4/",
+    "resources": {
+      "Payment": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "AuthorizePayment": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "InitiatePayment": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      },
+      "Refund": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      }
+    }
+  },
+  "677": {
+    "id": "677",
+    "name": "Usage Consumption",
+    "version": "4.0.0",
+    "description": "##TMF API Reference: TMF677 - Usage Consumption\n\n### Release: 20.5 - May 2021\n\nThis API covers the consumption levels of products, services or resources related to 0 or more parties. And so, we can search for remaining, global or used bucket values, or for exceptional consumption normally mentioned as out of bucket consumption.\n\nThere are 3 main changes in this API version: Usage Consumption is now described as a TASK resource, Usage Consumption Buckets may be linked between each other (aggregated buckets, bundled buckets, etc), Usage Consumption can be search having in mind services or resources. \n\n Copyright \u00a9 TM Forum 2020. All Rights Reserved",
+    "basePath": "/tmf-api/usageConsumption/v4/",
+    "resources": {
+      "QueryUsageConsumption": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete"
+        ]
+      }
+    }
+  },
+  "678": {
+    "id": "678",
+    "name": "Customer Bill",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF 678 - Customer bill Management\n\n### Release: 19.5 - December 2019\n\nThe Customer Bill Management API allows to find and retrieve one or several customer bills (also called invoices) produced for a customer. A customer bill is an electronic or paper document produced at the end of the billing process. The customer bill gathers and displays different items (applied customer billing rates generated during the rating and billing processes) to be charged to a customer. It represents a total amount due for all the products during the billing period and all significant information like dates, bill reference...\nThis API provides also operations to find and retrieve the details of applied customer billing rates presented on a customer bill. \nFinally, this API allows to request in real-time a customer bill creation and to manage this request.\n\n### Resources \n- customerBill\n- appliedCustomerBillingRate\n- customerBillOnDemand\n- billingCycle\n\n### Operations\nCustomer Bill Management API performs the following operations :\n- Retrieve a customer bill or a collection of customer bills depending on filter criteria.\n- Partial update of  a customer bill (for administration purposes).\n-  Retrieve an applied customer billing rate or a collection of applied customer billing rates depending on filter criteria.\n-  Create a customer bill on demand request, retrieve one or a collection of  customer bill on demand request(s) depending on filter criteria.\n\n- Manage notification of events on customer bill and customer bill on demand.\n\nCopyright \u00c2\u00a9 TM Forum 2018. All Rights Reserved.",
+    "basePath": "/tmf-api/customerBillManagement/v4/",
+    "resources": {
+      "CustomerBillOnDemand": {
+        "operations": "GET,POST"
+      },
+      "CustomerBill": {
+        "operations": "GET,PATCH"
+      },
+      "AppliedCustomerBillingRate": {
+        "operations": "GET"
+      },
+      "BillCycle": {
+        "operations": "GET"
+      },
+      "BillCycleSpecification": {
+        "operations": "GET"
+      }
+    }
+  },
+  "679": {
+    "id": "679",
+    "name": "Product Offering Qualification",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 679 - Product Offering Qualification**\n\n**Release : 19.0 - June 2019**\n\nProduct Offering Qualification API provides Product Offering commercial eligibility. This API allows to\n\u00e2\u20ac\u00a2 request a specific productOffering eligibility \n\u00e2\u20ac\u00a2 look for productOffering eligibles (ot not) from a product category\n\u00e2\u20ac\u00a2 look for productOffering eligibles (or not) from a productspec description.\nBecause the API allows describing product from the inventory, it is also possible to use it to retrieve productOffering available to complete existing product.\n\n**Product  Offering Qualification resource**\nA Task-based resouce to manage the qualification request. It has a status to monitor progress.\n\nProduct Offering Qualification API performs the following operations on product offerring qualification (POQ):\n- Retrieval of a POQ or a collection of POQ depending on filter criteria\n- Partial update of a POQ (including updating rules and for administration purpose)\n- Creation of a POQ (including default values and creation rules and for administration purpose)\n- Deletion of a POQ  (for administration purposes)\n- Notification of events on POQ.\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n",
+    "basePath": "/tmf-api/productOfferingQualification/v4/",
+    "resources": {
+      "ProductOfferingQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "680": {
+    "id": "680",
+    "name": "Recommendation",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 680 - Customer \n\nRecommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API.",
+    "basePath": "serverRoot/customer/v4/",
+    "resources": {
+      "QueryProductRecommendation": {
+        "operations": "GET,POST",
+        "notifications": [
+          "create,stateChange"
+        ]
+      }
+    }
+  },
+  "681": {
+    "id": "681",
+    "name": "Communication",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 681 - Communication Management**\n**Release : 19.5 - March 2020**\nThis API provides a standardized mechanism for Communication management such as creation, update, retrieval, deletion and notification of the system communication events.\nThis API manages the following data resources:\n- Communication Message",
+    "basePath": "/tmf-api/communicationManagement/v4/",
+    "resources": {
+      "CommunicationMessage": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "683": {
+    "id": "683",
+    "name": "Party Interaction",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF - 683 Party Interaction**\n\n**Release : 19.5 - Oct 2019**\n\nThe Party Interaction Management API provides a mechanism to manage party interactions. Creation, update and retrieval. Including creation, update, retrieval, deletion and notification of event. \nA Party Interaction captures information about past interactions in order to re-use it in future ones. \nhis allows agents to serve users better by knowing the steps they went through. \nIt also allows customers to see better the actions they have performed and how they interacted with the service provider.\n\n\nCopyright \u00c2\u00a9 TM Forum 2019. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/partyInteraction/v4/",
+    "resources": {
+      "PartyInteraction": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "statusChange"
+        ]
+      }
+    }
+  },
+  "685": {
+    "id": "685",
+    "name": "Resource Pool",
+    "version": "4.0.0",
+    "description": "This is Swagger UI environment generated for the TMF Resource Pool Management specification",
+    "basePath": "/tmf-api/resourcePoolManagement/v4/",
+    "resources": {
+      "Reservation": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "stateChange",
+          "informationRequired",
+          "creation",
+          "remove"
+        ]
+      },
+      "ResourcePool": {
+        "operations": "GET,POST,PATCH,"
+      },
+      "AvailabilityCheck": {
+        "operations": "GET,POST"
+      },
+      "Push": {
+        "operations": "GET,POST"
+      },
+      "Extract": {
+        "operations": "GET,POST"
+      }
+    }
+  },
+  "686": {
+    "id": "686",
+    "name": "Topology",
+    "version": "4.0.0",
+    "description": "Topology Graph Discovery Management",
+    "basePath": "/tmf-api/topologyDiscovery/v4/",
+    "resources": {
+      "Graph": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "Vertex": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "Edge": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "VertexSpecification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "EdgeSpecification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "TopologyDiscoveryJob": {
+        "operations": "GET, POST, PATCH",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "MergeTopologyGraphJob": {
+        "operations": "GET, POST, PATCH",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "TopologyQueryJob": {
+        "operations": "GET, POST, PATCH",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "687": {
+    "id": "687",
+    "name": "Stock",
+    "version": "4.1.0",
+    "description": "**TMF API Reference : TMF 687 - Stock Management**\n\nRelease : 20.0 - January 2020\n\nThe Stock Management API provides standardized mechanism for product stock management such as creation, update and retrieval of the representation of a product stock, reserve product stock, check or query product stock or Adjust product Stock. It also allows the notification of events related to them\n\nCopyright \u00c2\u00a9 TM Forum 2020. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/stock/v4/",
+    "resources": {
+      "ProductStock": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "batch",
+          "delete"
+        ]
+      },
+      "AdjustProductStock": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "batch"
+        ]
+      },
+      "CheckProductStock": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "batch"
+        ]
+      },
+      "ReserveProductStock": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "batch"
+        ]
+      },
+      "QueryProductStock": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "batch"
+        ]
+      }
+    }
+  },
+  "688": {
+    "id": "688",
+    "name": "Event",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF688 - Event Management \n\n### Release : 19.5 - December 2019\n\nThe TMF688 Event Management API supports the large scale publication and subscription of events, with multiple event types enabling an Event Driven Architecture. The Event Management API supports all notification types by the polymorphic event payload type.",
+    "basePath": "/tmf-api/event/v4/",
+    "resources": {
+      "Event": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create"
+        ]
+      },
+      "Topic": {
+        "operations": "GET, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "Hub": {
+        "operations": "GET, POST, DELETE"
+      }
+    }
+  },
+  "689": {
+    "id": "689",
+    "name": "Resource Portability",
+    "version": "4.0.0",
+    "description": "Resource Portability API provides a standardized mechanism for the exchange of resource information between different systems.",
+    "basePath": "/tmf-api/resourcePortability/v4/",
+    "resources": {
+      "PortabilityOrder": {
+        "operations": "PATCH, POST, GET",
+        "notifications": [
+          "create",
+          "change",
+          "attributeValueChange",
+          "cancellation",
+          "portedService"
+        ]
+      },
+      "CancelPortabilityOrder": {
+        "operations": "POST, GET",
+        "notifications": [
+          "create",
+          "stateChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "691": {
+    "id": "691",
+    "name": "Federated ID",
+    "version": "4.0.0",
+    "description": "This is Swagger UI environment generated for the TMF FederatedID specification",
+    "basePath": "/tmf-api/openid/v4",
+    "resources": {
+      "Userinfo": {
+        "operations": "GET"
+      }
+    }
+  },
+  "695": {
+    "id": "695",
+    "name": "Distributed Ledger",
+    "version": "4.0.0",
+    "description": "This is the API for distributed ledger management. It achieves abstraction of technology-specific distributed ledger implementations from API consumers.",
+    "basePath": "/tmf-api/distributedLedger/v4/",
+    "resources": {
+      "DistributedLedger": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "AgreementSpecification": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "Agreement": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change"
+        ]
+      },
+      "PartyRole": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "FinancialAccount": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "DLImplementation": {
+        "operations": "GET, POST, PATCH, DELETE"
+      },
+      "DLExchange": {
+        "operations": "GET, POST, PATCH, DELETE"
+      },
+      "DataAccessEndpoint": {
+        "operations": "GET, POST, PATCH"
+      },
+      "DLTransaction": {
+        "operations": "GET, POST, PATCH"
+      }
+    }
+  },
+  "696": {
+    "id": "696",
+    "name": "Risk Management",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF696 - Risk Assessment\n\n### Release : 20.0 - March 2020\n\nRisk Assessment API allows assessment of risks, such as party risk, risk associated with product offering, and risk associated with party role requesting a particular offering",
+    "basePath": "/tmf-api/riskManagement/v4/",
+    "resources": {
+      "ProductOfferingRiskAssessment": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "statusChange"
+        ]
+      },
+      "PartyRoleRiskAssessment": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "statusChange"
+        ]
+      },
+      "PartyRoleProductOfferingRiskAssessment": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "statusChange"
+        ]
+      },
+      "ShoppingCartRiskAssessment": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "statusChange"
+        ]
+      },
+      "ProductOrderRiskAssessment": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "statusChange"
+        ]
+      }
+    }
+  },
+  "697": {
+    "id": "697",
+    "name": "Work Order",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 697 - Work Order Management**",
+    "basePath": "/tmf-api/workOrderManagement/v4/",
+    "resources": {
+      "WorkOrder": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange",
+          "informationRequired"
+        ]
+      },
+      "CancelWorkOrder": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "699": {
+    "id": "699",
+    "name": "Sales",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 699 - Sales \n\nThis API provides interfaces for Sales Lead, Sales Opportunity, Sales Quote and the other management capabilities to support the sales activities to build relationship with the prospect customer who could be a person or organization that has an interest in the goods and/or services and possibly become the actual customers with one or more Subscriptions.",
+    "basePath": "/tmf-api/sales/v4/",
+    "resources": {
+      "SalesLead": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create,attributeValueChange,stateChange,delete"
+        ]
+      }
+    }
+  },
+  "700": {
+    "id": "700",
+    "name": "Shipping Order",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF 700 - Shipping Order \n\n### February 2021\n\n   A Shipping Order is a document used by a business to specify what\u00c2\u00a0items\u00c2\u00a0are to be transferred by a logisitic partner from a\u00c2\u00a0storage\u00c2\u00a0location\u00c2\u00a0or\u00c2\u00a0warehouse to a party in a different location.When goods are sent to the customers, shipment information can be provided to them so they can be aware of when things were shipped and when they will arrive. The service provider creates a Shipping Order which can be sent to a Logistic Partner to manage the physical shipment. The Shipping Order can be split into one or more Shipments with associated  Shipment Tracking to capture information about the current status of the shipment, the past checkpoints and the estimated arrival date .\n\nCopyright \u00c2\u00a9 TM Forum 2018. All Rights Reserved.",
+    "basePath": "/tmf-api/shippingOrder/v4.0/",
+    "resources": {
+      "ShippingOrder": {
+        "operations": "GET, POST, PUT, PATCH",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "701": {
+    "id": "701",
+    "name": "Process Flow",
+    "version": "4.1.0",
+    "description": "**TMF API Reference : TMF 701 - ProcessFlow API**\n\n**Release : 21.5 - October 2021**\n\nProcessFlow API provides capabilities to define design-time process specification & task specification by using the ProcessFlowSpecification and TaskFlow Specification and then runtime to manage process execution via the resources ProcessFlow & TaskFlow. This API allows to:\n\n**Design Time Use**\n\u00e2\u20ac\u00a2 Define ProcessFlow Specification to describe a business process (as done via a BPMN modeler)\n\u00e2\u20ac\u00a2 Define TaskFlow Specification to describe business task (define related entity specification, characteristic to be managed, role ,etc...)\n\u00e2\u20ac\u00a2 Associate TaskFlow Specification ProcessFlow Specification (a TaskFlow Specification could be used in several Process Flow Specification)\n\u00e2\u20ac\u00a2 Retrieve and get information about ProcessFlow Specification and TaskFlow Specification\n\n**ProcessFlowSpecification**\nA process flow specification is a definition of a process flow (as ProductSpecification is for Product). This resource is used by modeler designer to track a process design from a draft design to 'ready to be use' process flow.\n\nProcessFlow API performs the following operations on a ProcessFlowSpecification:\n- Create a Process Flow Specification \n- Retrieve and Get information about Process Flow Specification\n- Update Process Flow Specification\n- Delete Process Flow Specification\n- Notification of Process Flow Specification event\n\n**TaskFlowSpecification**\nA task flow specification is a definition of a task flow. This resource is used by modeler designer to define a task specification (for example to define the characterstic to be valued for this task specification).\n\nProcessFlow API performs the following operations on a TaskFlowSpecification:\n\u00e2\u20ac\u00a2 Create a Task Flow Specification \n\u00e2\u20ac\u00a2 Retrieve and Get information about Task Flow Specification\n\u00e2\u20ac\u00a2 Update Task Flow Specification\n\u00e2\u20ac\u00a2 Delete Task Flow Specification\n\u00e2\u20ac\u00a2 Notification of Task Flow Specification event   \n\n**Run Time use**\n\u00e2\u20ac\u00a2 Create a Process Flow (an instance of a processFlowSpecification). \n\u00e2\u20ac\u00a2 Get information about next task flow to be achieved in this process.\n\u00e2\u20ac\u00a2 Provide information to complete a taskflow (via an update information).\n\u00e2\u20ac\u00a2 Get information about processFlow and taskFlow execution in progress.\n\n**ProcessFlow resource**\nA process flow resource allows to manage an **instance** of a processFlow (usually managed on a bmpn tool but could be hardcoded). A processFlow will manage a list of taskFlow(s). A ProcessFlow is an instance of a ProcessFlowSpecification\n\nProcessFlow API performs the following operations on a ProcessFlow:\n- Retrieval of a ProcessFlow or a collection of ProcessFlow depending on filter criteria\n- Creation of a ProcessFlow (from a processFlow type)\n- Deletion of a ProcessFlow (for administration purposes)\n- Notification of events on ProcessFlow .\n\n**TaskFlow resource**\nA taskFlow is one specific **instance** of a task of a process. A TaskFlow may need human intervention to be completed (data capture). TaskFlow is a ProcessFlow subResource (A taskFlow cannot be independant from a processFlow). A taskFlow is an instance of a TaskFlowSpecification. A taskFlow is a ProcessFlow subResource.\n\nProcess Flow API performs the following operations on a task Flow:\n- Retrieval of a TaskFlow or a collection of TaskFlow (for a processFlow) depending on filter criteria(s)\n- Create an instance of a TaskFlow \n- Partial update of a TaskFlow \n- Notification of events on TaskFlow .\n\nCopyright \u00c2\u00a9 TM Forum 2021. All Rights Reserved\n\n",
+    "basePath": "/tmf-api/processFlowManagement/v4/",
+    "resources": {
+      "ProcessFlowSpecification": {
+        "operations": "GET,POST,DELETE,PATCH",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete",
+          "attributeValueChange"
+        ]
+      },
+      "TaskFlowSpecification": {
+        "operations": "GET,POST,DELETE,PATCH",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete",
+          "attributeValueChange"
+        ]
+      },
+      "ProcessFlow": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete",
+          "attributeValueChange"
+        ]
+      },
+      "TaskFlow": {
+        "operations": "GET,PATCH,POST",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete",
+          "attributeValueChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "702": {
+    "id": "702",
+    "name": "Resource Activation",
+    "version": "1.0",
+    "description": "",
+    "basePath": "/DSEntityProvisioning/api/ActivationAndConfiguration/v2",
+    "resources": {
+      "Service": {
+        "operations": "GET,POST,PATCH,DELETE"
+      },
+      "Monitor": {
+        "operations": "GET,HEAD"
+      },
+      "Resource": {
+        "operations": "GET,POST,PATCH,DELETE"
+      }
+    }
+  },
+  "703": {
+    "id": "703",
+    "name": "Entity Inventory",
+    "version": "4.0.0",
+    "description": "## TMF API Reference : TMF 703 - Entity Inventory \n\n Version 4.0 \n\nThe intent of this API is to provide a consistent/standardized mechanism to query and manipulate the Entity inventory.\n\nThe Entity Inventory API can be used to query the Entity and Association instances. \n Note: The Entity Inventory API can be called by an order management system to create new Entity/Association instances or update existing Entity/Association instances in the Entity Inventory.\n\n### Entity/Association resources\n\n### Entity Inventory API performs the following operations on Entity/Association resources :\n- Retrieve  an Entity/Association or a collection of Entities/Associations depending on filter criteria\n- Partial update of an Entity/Association instance (including updating rules)\n- Create an Entity/Association instance (including default values and creation rules)\n- Delete an Entity/Association (for administration users only)\n- Notification of events on Entity/Association \n it should be noted that the Entity resource can be considered as an abstract resource that extended by a concrete Managed Entity resource in this API\n\nCopyright (c)TM Forum 2020. All Rights Reserved.",
+    "basePath": "/tmf-api/entityInventory/v4/",
+    "resources": {
+      "Entity": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "Association": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      }
+    }
+  },
+  "704": {
+    "id": "704",
+    "name": "Test Case",
+    "version": "4.0.0",
+    "description": "This API provides a mechanism to manage test case models and related artifacts",
+    "basePath": "/tmf-api/testCase/v4/",
+    "resources": {
+      "TestCase": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestSuite": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "NonFunctionalTestModel": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "705": {
+    "id": "705",
+    "name": "Test Environment",
+    "version": "4.0.0",
+    "description": "This API provides a mechanism to manage test environments and related artifacts",
+    "basePath": "/tmf-api/testEnvironment/v4/",
+    "resources": {
+      "AbstractEnvironment": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "ConcreteEnvironmentMetaModel": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestResourceAPI": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "ProvisioningArtifact": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "706": {
+    "id": "706",
+    "name": "Test Data",
+    "version": "4.0.0",
+    "description": "This API provides a mechanism to manage test data instances and schemas",
+    "basePath": "/tmf-api/testData/v4/",
+    "resources": {
+      "TestDataInstance": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestDataSchema": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "707": {
+    "id": "707",
+    "name": "Test Result",
+    "version": "4.0.0",
+    "description": "This API provides a mechanism to manage test results",
+    "basePath": "/tmf-api/testResult/v4/",
+    "resources": {
+      "TestCaseResult": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "TestSuiteResult": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "NonFunctionalTestResult": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      }
+    }
+  },
+  "708": {
+    "id": "708",
+    "name": "Test Execution",
+    "version": "4.0.0",
+    "description": "This API provides the test case, test suite, and non-functional test case model execution capability",
+    "basePath": "/tmf-api/testExecution/v4/",
+    "resources": {
+      "TestEnvironmentAllocationExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "TestEnvironmentProvisioningExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "TestCaseExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "TestSuiteExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "NonFunctionalTestExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "709": {
+    "id": "709",
+    "name": "Test Scenario",
+    "version": "4.0.0",
+    "description": "This API provides a mechanism to manage test scenarios",
+    "basePath": "/tmf-api/testScenario/v4/",
+    "resources": {
+      "TestScenario": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "710": {
+    "id": "710",
+    "name": "General Test Artifact",
+    "version": "4.0.0",
+    "description": "This API provides a mechanism to manage general test artifacts",
+    "basePath": "/tmf-api/generalTestArtifact/v4/",
+    "resources": {
+      "GeneralTestArtifact": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "711": {
+    "id": "711",
+    "name": "Shipment Management",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF XXX - Shipment Management**",
+    "basePath": "/tmf-api/shipmentManagement/v4/",
+    "resources": {
+      "Shipment": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "ShipmentSpecification": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "712": {
+    "id": "712",
+    "name": "Shipment Qualification",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF645 - Shipment Qualification Management",
+    "basePath": "/tmf-api/shipmentQualificationManagement/v4",
+    "resources": {
+      "CheckShipmentQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "informationRequired"
+        ]
+      },
+      "QueryShipmentQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "713": {
+    "id": "713",
+    "name": "Work Management",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 713 - Work Management**",
+    "basePath": "/tmf-api/workManagement/v4/",
+    "resources": {
+      "Work": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "WorkSpecification": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "714": {
+    "id": "714",
+    "name": "Work Qualification",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF 714 - Work Qualification Management",
+    "basePath": "/tmf-api/workQualificationManagement/v4",
+    "resources": {
+      "CheckWorkQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "informationRequired"
+        ]
+      },
+      "QueryWorkQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "715": {
+    "id": "715",
+    "name": "Warranty Management",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF XXX - Warranty Management**",
+    "basePath": "/tmf-api/warrantyManagement/v4/",
+    "resources": {
+      "Warranty": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "WarrantySpecification": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "716": {
+    "id": "716",
+    "name": "Resource Reservation",
+    "version": "4.0.0",
+    "description": "**TMF API Reference : TMF 716 - Resource Reservation Management**",
+    "basePath": "/tmf-api/resourceReservation/v4/",
+    "resources": {
+      "ResourceReservation": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete",
+          "stateChange",
+          "informationRequired"
+        ]
+      },
+      "CancelResourceReservation": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange",
+          "informationRequired"
+        ]
+      }
+    }
+  },
+  "717": {
+    "id": "717",
+    "name": "Customer360",
+    "version": "4.0.0",
+    "description": "An API to give a consolidated Customer overview. This is a view-only API, based on the various underlying involved TM Forum Open APIs. This API provides references where one can find detailed information for:\nAccount\nAgreement\nAppointment\nCustomerBill\nInteractionItem\nLoyaltyBalance\nProductOrder\nProductValue\nPromotion\nQuote\nServiceProblem\nTroubleTicket\nUsageSpecification\n",
+    "basePath": "/tmf-api/customer360/v4/",
+    "resources": {
+      "Customer360": {
+        "operations": "GET",
+        "notifications": [
+          "create,attributeValueChange,delete"
+        ]
+      }
+    }
+  },
+  "720": {
+    "id": "720",
+    "name": "Digital Identity",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF720 - Digital Identity Management\n\n### Version 4.0. - January 2021 \n\nDigital Identity Management API goal is to provide the ability to manage a digital identity. This digital identity allows to identify an individual, a resource, or a partyRole (a specific role - or set of roles - for a given individual). A digital identity is associated with credential/authentification method. These credential/authentification methods should be extensible to describe all type of authentification method like login/password, biometric, token, etc.. A contact medium is also associated with digital identity (or directly at credential level) to manage credential recovery UCs. ",
+    "basePath": "/tmf-api/digitalIdentityManagement/v4/",
+    "resources": {
+      "DigitalIdentity": {
+        "operations": "GET,POST,DELETE, PATCH",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete",
+          "attributeValueChange"
+        ]
+      }
+    }
+  },
+  "724": {
+    "id": "724",
+    "name": "Incident",
+    "version": "4.0.1",
+    "description": "**TMF API Reference : TMF - 724 Incident**\n\n**Release : 22.5 - November 2022**\n\nThe Incident API provides a standardized client interface to Incident Management Systems for creating, tracking and managing Incidents as a result of an issue or problem identified by a customer or another system. \nExamples of Incident API originators (clients) include CRM applications, network management or fault management systems, or other Incident management systems (e.g. B2B).\n\nThe API supports the ability to send requests to create a new Incident specifying the nature and severity of the trouble or issue as well as all necessary related information. The API also includes mechanisms to search for and update existing Incidents. Notifications are defined to provide information when a Incident has been updated, including status changes. A basic set of states of a Incident has been specified (as an example) to handle Incident lifecycle management.\nIncident API manages Incident resource:\n\n  -\tA Incident represents a record, or an issue raised by requestor that need to be solved, used for reporting and managing the resolution of problems, incidents or request -\tThe main Incident attributes are its name, priority, type,  dateTime attributes (occurTime, expected resolution, resolution), state and related information (change reason and change date), related parties (originator, owner, reviser, etc.), related entities (product, product order, customer bill) and notes Incident API performs the following operations on Incident -\tRetrieval of an Incident or a collection of Incident depending on filter criteria -\tPartial update of a Incident -\tCreation of an Incident -\tNotification of events on Incident: o\tIncident state change o\tIncident change o\tIncident resolved o\tIncident created o\tIncident Information required\n\n\n\nCopyright \u00c2\u00a9 TM Forum 2022. All Rights Reserved\n\n\n",
+    "basePath": "/tmf-api/Incident/v4/",
+    "resources": {
+      "Incident": {
+        "operations": "GET,POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "DiagnoseIncident": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      },
+      "ResolveIncident": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "725": {
+    "id": "725",
+    "name": "Metadata Catalog",
+    "version": "4.0.0",
+    "description": "",
+    "basePath": "/tmf-api/metadataCatalog/v4/",
+    "resources": {
+      "MetadataCatalog": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "MetadataCategory": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "MetadataCatalogItem": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "MetadataSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "726": {
+    "id": "726",
+    "name": "Metadata Inventory",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF 726 - Metadata Inventory",
+    "basePath": "/tmf-api/metadataInventory/v4/",
+    "resources": {
+      "Metadata": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "MetadataRelation": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      }
+    }
+  },
+  "727": {
+    "id": "727",
+    "name": "Service Usage",
+    "version": "4.0.0",
+    "description": "The ServiceUsage API provides a standardized mechanism for service usage management such as the creation, update, retrieval, import and export of a collection of service usages. A service usage is an occurrence of usage on a Service derived from various Resource usages, which can be further used for determining the Product usage. It is comprised of characteristics, which represent attributes of service usage.",
+    "basePath": "/tmf-api/serviceUsage/v4/",
+    "resources": {
+      "ServiceUsage": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "statusChange",
+          "delete"
+        ]
+      },
+      "ServiceUsageSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "728": {
+    "id": "728",
+    "name": "Dunning Case",
+    "version": "4.0.0",
+    "description": "**TMF API Reference :  TMF 728 - Dunning Case**\n\nVersion : 4.0.0 - April 2022\n\nThe Dunning Case API provides standardized mechanism for the management of the data entities involved across dunning process. The dunning process is the process of methodically communicating with customers to ensure the collection of accounts receivable, that exists in any services provider compamy.\n\nThis API enables the management (create, read, update and delete) of the data entities involved across process: \n\n- **Dunning Scenario resource**: describes a company\u00e2\u20ac\u2122s dunning strategy. It must be easily configurable to describe the dunning rules to apply to a case, the order in which applying them, the events that trigger dunning rules evaluation and the actions that must be done.\n- **Dunning Rule resource**: represents the rules with the events that trigger dunning rules evaluation, the conditions to evaluate and the actions that must be done.\n- **Dunning Case resource**: represents a type of cases open for a customer. Whenever a customer enters the dunning process, a dunning case is linked to his customer account debt and it contains all details pertaining to the debt, such as dunning case rules, interactions, etc.\n\nDunning Case API also allows the subscription and the notification of events on Dunning Cases as they are created or updated.\n\nCopyright (c)TM Forum 2022. All Rights Reserved.\n\n\n",
+    "basePath": "/tmf-api/dunningCase/v4",
+    "resources": {
+      "DunningScenario": {
+        "operations": "GET, PATCH, POST, DELETE"
+      },
+      "DunningRule": {
+        "operations": "GET, PATCH, POST, DELETE"
+      },
+      "DunningCase": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "730": {
+    "id": "730",
+    "name": "Software and Compute",
+    "version": "4.0.2",
+    "description": "This API introduces schemas mapping the Software and Compute ABE\nto the TM Forum Open API data model.\n\nThe existing Resource domain APIs for Catalog (634), Inventory (639),\nActivation (664, 702) and Ordering (652) should be used with the\nsubtypes of Resource/ResourceSpecification introduced in this OAS.\n",
+    "basePath": "/tmf-api/softwareCompute/v4/",
+    "resources": {
+      "Resource": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "ResourceSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      }
+    }
+  },
+  "741": {
+    "id": "741",
+    "name": "Partner Bill",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF 741 - Partner bill Management\n\n### Release: 19.5 - December 2019\n\nThe Customer Bill Management API allows to find and retrieve one or several customer bills (also called invoices) produced for a customer. A customer bill is an electronic or paper document produced at the end of the billing process. The customer bill gathers and displays different items (applied customer billing rates generated during the rating and billing processes) to be charged to a customer. It represents a total amount due for all the products during the billing period and all significant information like dates, bill reference...\nThis API provides also operations to find and retrieve the details of applied customer billing rates presented on a customer bill. \nFinally, this API allows to request in real-time a customer bill creation and to manage this request.\n\n### Resources \n- customerBill\n- appliedCustomerBillingRate\n- customerBillOnDemand\n- billingCycle\n\n### Operations\nCustomer Bill Management API performs the following operations :\n- Retrieve a customer bill or a collection of customer bills depending on filter criteria.\n- Partial update of  a customer bill (for administration purposes).\n-  Retrieve an applied customer billing rate or a collection of applied customer billing rates depending on filter criteria.\n-  Create a customer bill on demand request, retrieve one or a collection of  customer bill on demand request(s) depending on filter criteria.\n\n- Manage notification of events on customer bill and customer bill on demand.\n\nCopyright \u00c2\u00a9 TM Forum 2018. All Rights Reserved.",
+    "basePath": "/tmf-api/PartnerBillManagement/v4/",
+    "resources": {
+      "PartnerBill": {
+        "operations": "GET,PATCH"
+      },
+      "AppliedPartyBillingRate": {
+        "operations": "GET"
+      },
+      "BillCycle": {
+        "operations": "GET"
+      },
+      "BillCycleSpecification": {
+        "operations": "GET"
+      }
+    }
+  },
+  "744": {
+    "id": "744",
+    "name": "Partner360",
+    "version": "4.0.0",
+    "description": "An API to give a consolidated Partner overview. This is a view-only API, based on the various underlying involved TM Forum Open APIs. This API provides references where one can find detailed information for:\nAccount\nAgreement\nAppointment\nPartnerBill\nInteractionItem\nLoyaltyBalance\nProductOrder\nProductValue\nPromotion\nQuote\nServiceProblem\nTroubleTicket\nUsageSpecification\n",
+    "basePath": "/tmf-api/Partner360/v4/",
+    "resources": {
+      "Partner360": {
+        "operations": "GET"
+      }
+    }
+  },
+  "751": {
+    "id": "751",
+    "name": "AnomalyManagement",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF751 - Anomaly Management\n\n### Release : V4.0 - Oct. 2022\n\nAnomaly Management API goal is to manage entities, operations and notifications related to anomalies and their specifications\n###  ",
+    "basePath": "/tmf-api/anomalyManagement/v4/",
+    "resources": {
+      "Anomaly": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "detect"
+        ]
+      },
+      "AnomalySpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "761": {
+    "id": "761",
+    "name": "Resource Qualification",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF645 - Resource Qualification\n\n Version 4.0 \n\n Resource Qualification API is one of Pre-Ordering Management API Family. Resource Qualification API goal is to provide Resource technical eligibility. Since v4 the API is split in 2 resources to distinguish specific Resource qualification request to be performed on a described configurated Resource (or a list of configured Resources) from a retrieval of Resources eligible for a given context. The API allows to manage synchronous as asynchronous eligibility response (eligibility provided in POST response or later with an id and state provided ).  \n\n### CheckResourceQualification Resource \n\n This resource is use to check a configured Resource eligibility (or a list of Resource). A qualification result is provided in response. Requested could ask for unavailability reason and/or for alternate proposal \n\n### TMF645 performs the following operations on the check Resource qualification resource :\n- Retrieve a checkResourceQualification or a collection of checkResourceQualification depending on filter criteria\n- Partial update of a checkResourceQualification \n- Create a checkResourceQualification (including default values and creation rules)\n- Delete a checkResourceQualification (for administration purposes)\n- Manage notification on checkResourceQualification\n\n### Query Resource Qualification resource\n\n Query Resource Qualification is used to retrieve a list of Resource eligible in a given request provided by requester (via searchCriteria).\n\n### TMF645 performs the following operations on a query Resource qualification resource:\n\n- Retrieval a queryResourceQualification or a list of queryResourceQualification\n- Partial update of a queryResourceQualification\n- Creation of a queryResourceQualification\n- Deletion of a queryResourceQualification\n- Notification on queryResourceQualification\n\n Copyright (c) TM Forum 2019. All Rights Reserved",
+    "basePath": "/tmf-api/ResourceQualificationManagement/v4",
+    "resources": {
+      "CheckResourceQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete",
+          "informationRequired"
+        ]
+      },
+      "QueryResourceQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "913": {
+    "id": "913",
+    "name": "Test Component Suite",
+    "version": "4.0.0",
+    "description": "Test Component Suite short documentation",
+    "basePath": "/tmf-api/testComponentSuite/v4/",
+    "resources": {
+      "TestCase": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestSuite": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "NonFunctionalTestModel": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "AbstractEnvironment": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "ConcreteEnvironmentMetaModel": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestResourceAPI": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "ProvisioningArtifact": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestDataInstance": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestDataSchema": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "TestCaseResult": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "TestSuiteResult": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "NonFunctionalTestResult": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "TestEnvironmentAllocationExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "TestEnvironmentProvisioningExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "TestCaseExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "TestSuiteExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "NonFunctionalTestExecution": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "stateChange"
+        ]
+      },
+      "TestScenario": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      },
+      "GeneralTestArtifact": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete",
+          "attributeValueChange",
+          "stateChange"
+        ]
+      }
+    }
+  },
+  "914": {
+    "id": "914",
+    "name": "IoT Service",
+    "version": "4.0.0",
+    "description": "",
+    "basePath": "/tmf-api/iotservicemanagement/v4/",
+    "resources": {
+      "IotService": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "batch",
+          "delete"
+        ]
+      },
+      "ServiceCatalog": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "batch",
+          "delete"
+        ]
+      },
+      "ServiceCategory": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ServiceCandidate": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ServiceQualification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ServiceProblem": {
+        "operations": "GET,POST,PATCH, DELETE",
+        "notifications": [
+          "create",
+          "stateChange",
+          "attributeValueChange",
+          "informationRequired"
+        ]
+      },
+      "IotServiceSpecification": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "ServiceTest": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      },
+      "ServiceTestSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      },
+      "UsageConsumptionReportRequest": {
+        "operations": "GET,POST,DELETE",
+        "notifications": [
+          "stateChange"
+        ]
+      },
+      "User": {
+        "operations": "GET, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "UsageConsumptionReport": {
+        "operations": "GET,DELETE"
+      },
+      "ImportJob": {
+        "operations": "GET, POST, DELETE"
+      },
+      "ExportJob": {
+        "operations": "GET, POST, DELETE"
+      }
+    }
+  },
+  "915": {
+    "id": "915",
+    "name": "AI Management",
+    "version": "4.0.0",
+    "description": "AI Management API",
+    "basePath": "/tmf-api/AiM/v4/",
+    "resources": {
+      "AiContractSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "attributeValueChange"
+        ]
+      },
+      "AiModel": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "AiModelSpecification": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "delete",
+          "attributeValueChange"
+        ]
+      },
+      "AiContract": {
+        "operations": "GET, PATCH, POST, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "AiContractViolation": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "delete"
+        ]
+      },
+      "Alarm": {
+        "operations": "GET, POST, PATCH, DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Rule": {
+        "operations": "POST, GET, DELETE, PATCH",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Event": {
+        "operations": "GET, POST",
+        "notifications": [
+          "create"
+        ]
+      },
+      "Monitor": {
+        "operations": "GET",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Topic": {
+        "operations": "GET, POST, DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "Hub": {
+        "operations": "GET, POST, DELETE"
+      }
+    }
+  },
+  "921": {
+    "id": "921",
+    "name": "Intent",
+    "version": "4.0.2",
+    "description": "This is Swagger UI environment generated for the TM Forum Intent Management API specification",
+    "basePath": "/tmf-api/intentManagement/v4/",
+    "resources": {
+      "Intent": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      },
+      "IntentReport": {
+        "operations": "GET,DELETE",
+        "notifications": [
+          "create",
+          "change",
+          "delete"
+        ]
+      }
+    }
+  },
+  "924": {
+    "id": "924",
+    "name": "DCS 5GSlice ServiceActivation",
+    "version": "4.0.0",
+    "description": "## TMF API Reference: TMF924 - 5G Network Slice\nThis is a Domain Context Specialisation of the TMF Service Activation and Configuration API that also exposes a 5G Network Slice as defined by GSMA (NG.116-v6.0-1) and 3GPP. As such, it can play its part in BSS service configuration and orchestration as well as communicate a GSMA compatible data model to network domains.\nCopyright \u00c2\u00a9 TM Forum 2022; All Rights Reserved",
+    "basePath": "/tmf-api/ServiceActivationAndConfiguration/v4",
+    "resources": {
+      "Service": {
+        "operations": "GET,POST,PATCH,DELETE",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      },
+      "Monitor": {
+        "operations": "GET",
+        "notifications": [
+          "create",
+          "attributeValueChange",
+          "stateChange",
+          "delete"
+        ]
+      }
+    }
+  },
+  "9306": {
+    "id": "9306",
+    "name": "Test Environment Provisioning",
+    "version": "4.0.0",
+    "description": "My api short documentation",
+    "basePath": "/tmf-api/testEnvironmentProvisioning/v4/",
+    "resources": {}
+  }
+}

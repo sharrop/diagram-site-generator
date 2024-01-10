@@ -1,0 +1,9 @@
+
+# All PUML and SVG files
+*.puml
+*.svg
+*.zip
+*.pyc
+
+!index.html
+/Open_API_And_Data_Model-4.0-Sprint-2020-03

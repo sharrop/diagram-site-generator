@@ -1,0 +1,31 @@
+{
+    "apis": {
+        "666": {
+            "id": "666",
+            "name": "Account",
+            "version": "4.0.0",
+            "domain": "Service",
+            "description": "Account API",
+            "basePath": "/tmf-api/account/v4",
+            "resources": {
+                "x": {
+                    "operations": "GET, DELETE",
+                    "notifications": [
+                        "create",
+                        "stateChange"
+                    ]
+                },
+                "y": {
+
+                }
+            }
+        }
+    },
+    "schemas": {
+        "x": {
+            "api": "666",
+            "domain": "Service",
+            "description": "Account Schema"
+        }
+    }
+}

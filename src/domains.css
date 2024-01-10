@@ -1,0 +1,60 @@
+.item1 {
+    grid-area: title;
+}
+
+.grid-container {
+    display: grid;
+    grid:
+        'title title title title title'
+        '. . . . .';
+    grid-gap: 10px;
+    background-color: #ffffff;
+    border-radius: 10px 25px;
+}
+
+.grid-container {
+    background-color: #35aade;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 30px;
+}
+
+#api-box {
+    text-align: left;
+    border-radius: 10px 25px;
+    background: #dc6526;
+    padding: 10px;
+    width: 120px;
+    height: 50px;
+    box-shadow: 2px 2px 5px 1px rgb(100, 100, 100);
+}
+
+#domain-title {
+    text-align: center;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+div.number {
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 10px;
+    color: white;
+    line-height: 0.4cm;
+}
+
+div.title {
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 13px;
+    color: #1a2746;
+    font-weight: bold;
+    line-height: 0.4cm;
+}
+
+div.version {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    color: #1a2746;
+    font-weight: bold;
+    line-height: 0.4cm;
+}
