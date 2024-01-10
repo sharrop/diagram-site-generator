@@ -14,6 +14,8 @@ The idea is that (say) a **Customer** class diagram page would have a link to an
 
 ## Installation
 
+You can use the website as-is, but if you need to regenerate it from scratch:
+
 1. Clone/Download *this* repo into a local directory (as {_tool_} below)
 2. Clone/Download the `github.com/tmforum-rand` repository under a root dirctory, as {_root_} below (you will need TMForum-granted access to this repo as an "API Author"). This would be either:
    - **The TMF v4 API repo ([Open_API-And_Data_Model](https://github.com/tmforum-rand/Open_API_And_Data_Model)).** Note this ZIP is ~1Gb
