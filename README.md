@@ -8,7 +8,9 @@ The idea is that (say) a **Customer** class diagram page would have a link to an
 
 ## Status
 
-**This only works in the TMForum v4 repository at the moment**, as the v5 repo does not store the generated PlantUML files.
+- **This only works in the TMForum v4 repository at the moment**, as the v5 repo does not store the generated PlantUML files.
+- There are quite a few broken links in the class diagrams, as I try to detect which schema references have valid class diagrams behind them. For example: AgreementItemRef does not have its own AgreementItem diagram - this is inside the Agreement schema.
+- Note that this website is generated from the tmf-rand repo, and so may create APIs/schemas that are yet to be released, or are a work-in-progress.
 
 ## Installation
 
